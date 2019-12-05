@@ -89,7 +89,7 @@ app.set('view engine', 'html');
 cluster.schedulingPolicy = cluster.SCHED_RR;
 if(cluster.isMaster){
   var cpuCount = require('os').cpus().length;
-  for (var i = 0; i < cpuCount; i += 1) {
+  for (var i = 1; i < cpuCount; i += 1) {
     cluster.fork();
   }
 }else{
